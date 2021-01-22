@@ -1,10 +1,14 @@
-isPresent=1;
-randomCheck=$((RANDOM%2));
-if [ $isPresent -eq $randomCheck ];
+isParttime=1;
+isFulltime=2;
+randomCheck=$((RANDOM%3));
+if [ $isPFulltime -eq $randomCheck ];
 then
-	empRatePerHR=20;
 	empHrs=8;
-	salary=$(($empHrs*$empRatePerHr));
+elif [ $isParttime -eq $randomCheck ];
+then
+	empHrs=4;
 else
-	salary=0;
+	empHrs=0;
 fi
+salary=$(($empHrs*$empRatePerHr));
+
